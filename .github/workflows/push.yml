@@ -28,6 +28,9 @@ jobs:
         ruby-version: 3.1
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
+    - name: Make install script executable
+      run: chmod +x .github/bin/install
+
     - name: Install Terraspace
       run:
         .github/bin/install
