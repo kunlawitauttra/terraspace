@@ -43,4 +43,4 @@ jobs:
 
     - name: Run Terraspace
       run: |
-        terraspace all up -y
+        terraspace up 03_vm -y
