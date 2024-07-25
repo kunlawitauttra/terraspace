@@ -11,7 +11,7 @@ on:
           - prod
       command:
         description: "Terraspace command to run"
-        default: "plan demo"
+        default: "all plan"
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -34,6 +34,12 @@ jobs:
       with:
         ruby-version: 3.1
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+    - name: Set up Terraform 1.5.5
+      run: |
+        curl -L -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.5.5/terraform_1.5.5_linux_amd64.zip
+        unzip -o /tmp/terraform.zip -d /usr/local/bin/
+        terraform -v
 
     - name: Make install script executable
       run: chmod +x .github/bin/install
