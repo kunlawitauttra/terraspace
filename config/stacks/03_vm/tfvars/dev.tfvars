@@ -1,4 +1,4 @@
-resource_group_name = "example-resources"
+resource_group_name = "my-resources-group"
 location            = "East US"
 vm_name             = "this-vm"
 vm_size             = "Standard_B1s"
@@ -12,3 +12,4 @@ image_version       = "latest"
 tags = {
   environment = "dev"
 }
+
